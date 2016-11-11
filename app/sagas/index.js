@@ -1,2 +1,3 @@
-export default function* sagas() {
-};
+export default function* () {
+  return yield;
+}
