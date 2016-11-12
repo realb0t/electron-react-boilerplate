@@ -1,6 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": [
+    "eslint:recommended",
+    "airbnb"
+  ],
   "env": {
     "browser": true,
     "mocha": true,
@@ -21,6 +24,7 @@
     "react/jsx-no-bind": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": "off",
+    "brace-style": ["error", "allman", { "allowSingleLine": true }],
     "flowtype-errors/show-errors": 2
   },
   "plugins": [

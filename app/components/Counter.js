@@ -12,7 +12,8 @@ class Counter extends Component {
     counter: PropTypes.number.isRequired
   };
 
-  render() {
+  render()
+  {
     const { increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
     return (
       <div>

@@ -6,7 +6,8 @@ import { shallow } from 'enzyme';
 import Counter from '../../app/components/Counter';
 
 
-function setup() {
+function setup()
+{
   const actions = {
     increment: spy(),
     incrementIfOdd: spy(),
@@ -23,31 +24,37 @@ function setup() {
 }
 
 
-describe('Counter component', () => {
-  it('should should display count', () => {
+describe('Counter component', () =>
+{
+  it('should should display count', () =>
+  {
     const { p } = setup();
     expect(p.text()).to.match(/^1$/);
   });
 
-  it('should first button should call increment', () => {
+  it('should first button should call increment', () =>
+  {
     const { buttons, actions } = setup();
     buttons.at(0).simulate('click');
     expect(actions.increment.called).to.be.true;
   });
 
-  it('should second button should call decrement', () => {
+  it('should second button should call decrement', () =>
+  {
     const { buttons, actions } = setup();
     buttons.at(1).simulate('click');
     expect(actions.decrement.called).to.be.true;
   });
 
-  it('should third button should call incrementIfOdd', () => {
+  it('should third button should call incrementIfOdd', () =>
+  {
     const { buttons, actions } = setup();
     buttons.at(2).simulate('click');
     expect(actions.incrementIfOdd.called).to.be.true;
   });
 
-  it('should fourth button should call incrementAsync', () => {
+  it('should fourth button should call incrementAsync', () =>
+  {
     const { buttons, actions } = setup();
     buttons.at(3).simulate('click');
     expect(actions.incrementAsync.called).to.be.true;

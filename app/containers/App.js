@@ -6,7 +6,8 @@ export default class App extends Component {
     children: PropTypes.element.isRequired
   };
 
-  render() {
+  render()
+  {
     return (
       <div>
         {this.props.children}
