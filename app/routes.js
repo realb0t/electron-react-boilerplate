@@ -9,6 +9,6 @@ import Editor from './containers/Editor';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Dashboard} />
-    <Route path="/edit" component={Editor} />
+    <Route path="edit/:id" component={Editor} />
   </Route>
 );

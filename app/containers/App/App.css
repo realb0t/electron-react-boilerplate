@@ -7,14 +7,25 @@
 
 .application__navigationPanel
 {
-  flex: 0 0 200px;
+  flex: 0 0 220px;
   background-color: red;
+}
+
+.application__navigationPanel ul
+{
+  padding: 10px;
+}
+
+.application__navigationPanel li
+{
+  margin: 5px 0;
 }
 
 .application__contentArea
 {
   flex: 1 1 auto;
   background-color: blue;
+  padding: 10px;
 }
 
 .application__navigationPanel, .application__contentArea
