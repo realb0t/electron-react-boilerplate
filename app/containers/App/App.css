@@ -1,0 +1,23 @@
+.application
+{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.application__navigationPanel
+{
+  flex: 0 0 200px;
+  background-color: red;
+}
+
+.application__contentArea
+{
+  flex: 1 1 auto;
+  background-color: blue;
+}
+
+.application__navigationPanel, .application__contentArea
+{
+  height: 100%;
+}
