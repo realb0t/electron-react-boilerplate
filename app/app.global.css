@@ -1,11 +1,39 @@
 @import "~font-awesome/css/font-awesome.css";
 
+@font-face {
+  font-family: 'Lato';
+  src: url(./static/fonts/Lato/Lato-Light.ttf) format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(./static/fonts/Lato/Lato-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(./static/fonts/Lato/Lato-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(./static/fonts/Lato/Lato-Bold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   position: relative;
   color: black;
   height: 100vh;
   background-color: white;
-  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  font-family: Lato, Arial, Helvetica, Helvetica Neue, serif;
   overflow-y: hidden;
   margin: 0px;
   padding: 0px;

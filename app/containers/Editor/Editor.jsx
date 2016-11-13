@@ -5,8 +5,16 @@ import styles from './Editor.css';
 export function Editor({ id })
 {
   return (<div className={styles.editor}>
-    <h1>Editor</h1>
-    <div>{id}</div>
+    <h1>Editor {id}</h1>
+    <div>
+      <a href={undefined}>
+        Add Solving
+      </a>
+      <span> | </span>
+      <a href={undefined}>
+        Add Problem
+      </a>
+    </div>
   </div>);
 }
 

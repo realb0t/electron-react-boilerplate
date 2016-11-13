@@ -1,3 +1,8 @@
+@content-area-bg-color: white;
+@navigation-bg-color: #4da8b0;
+@navigation-color: #34757a;
+@navigation-text-color: #1a4246;
+
 .application
 {
   display: flex;
@@ -8,23 +13,157 @@
 .application__navigationPanel
 {
   flex: 0 0 220px;
-  background-color: red;
+  background-color: #4da8b0;
+  font-size: 15px;
+  color: #1a4246;
+  overflow: scroll;
+}
+
+.application__navigationPanel h1,
+.application__navigationPanel h2
+{
+  margin: 20px 10px 0 10px;
+}
+
+.application__navigationPanel h1
+{
+  font-size: 18px;
+  color: black;
+}
+
+.application__navigationPanel h2
+{
+  font-size: 15px;
+  color: #1a4246;
+  text-transform: uppercase;
 }
 
 .application__navigationPanel ul
 {
-  padding: 10px;
+  padding: 0 15px 5px 15px;
+  margin: 0px;
 }
 
 .application__navigationPanel li
 {
-  margin: 5px 0;
+  margin: 7px 0;
+  padding-left: 10px;
+  position: relative;
+}
+
+.navigationItem__label::before
+{
+  content: " ";
+}
+
+.navigationItem__label
+{
+  color: #34767c;
+  font-size: 13px;
+}
+
+/* Always second level */
+.application__navigationPanel li.navigationItem_type_solution
+{
+  margin: 0 0 5px 0;
+}
+
+.navigationItem_type_problem > ul
+{
+  padding: 5px;
+}
+
+/* Link */
+
+.application__navigationPanel a
+{
+  font-size: 15px;
+  color: #1a4246;
+  opacity: 1;
+}
+
+.application__navigationPanel a:hover
+{
+  color: #0c2022;
+}
+
+.application__navigationPanel a:active
+{
+  color: #34757a;
+}
+
+.navigationItem_type_solution.navigationItem_selected a
+{
+  font-weight: bold;
+}
+
+.navigationItem a::before
+{
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  left: -5px;
+  top: 4px;
+  position: absolute;
+  font-size: 13px;
+  color: #34757a;
+}
+
+.navigationItem a:hover::before
+{
+  color: #1a4246;
+}
+
+.navigationItem a:active::before
+{
+  color: #34757a;
+}
+
+.navigationItem_type_problem > a::before
+{
+  content: "\f29c";
+}
+
+.navigationItem_type_problem.navigationItem_solved > a::before
+{
+  content: "\f059";
+}
+
+.navigationItem_type_solution > a::before
+{
+  content: "\f05d";
+}
+
+.navigationItem_type_solution.navigationItem_solving > a::before
+{
+  content: "\f058";
+}
+
+.navigationItem_type_dashboard > a::before
+{
+  content: "\f015";
+}
+
+.navigationItem_type_unresolvedList > a::before
+{
+  content: "\f29c";
+}
+
+.navigationItem_type_noDecisionList > a::before
+{
+  content: "\f05d";
+}
+
+.navigationItem_type_onTop > a::before
+{
+  content: "\f139";
 }
 
 .application__contentArea
 {
   flex: 1 1 auto;
-  background-color: blue;
+  background-color: white;
   padding: 10px;
 }
 
