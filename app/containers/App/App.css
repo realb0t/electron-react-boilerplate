@@ -1,11 +1,11 @@
-.application
+.app
 {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
 
-.application__navigationPanel
+.app__navigationPanel
 {
   flex: 0 0 220px;
   background-color: #4da8b0;
@@ -14,32 +14,32 @@
   overflow: scroll;
 }
 
-.application__navigationPanel h1,
-.application__navigationPanel h2
+.app__navigationPanel h1,
+.app__navigationPanel h2
 {
   margin: 20px 10px 0 15px;
 }
 
-.application__navigationPanel h1
+.app__navigationPanel h1
 {
   font-size: 18px;
   color: black;
 }
 
-.application__navigationPanel h2
+.app__navigationPanel h2
 {
   font-size: 15px;
   color: #1a4246;
   text-transform: uppercase;
 }
 
-.application__navigationPanel ul
+.app__navigationPanel ul
 {
   padding: 0 20px 5px 20px;
   margin: 0px;
 }
 
-.application__navigationPanel li
+.app__navigationPanel li
 {
   margin: 7px 0;
   padding-left: 10px;
@@ -58,7 +58,7 @@
 }
 
 /* Always second level */
-.application__navigationPanel li.navigationItem_type_solution
+.app__navigationPanel li.navigationItem_type_solution
 {
   margin: 0 0 5px 0;
 }
@@ -70,19 +70,19 @@
 
 /* Link */
 
-.application__navigationPanel a
+.app__navigationPanel a
 {
   font-size: 15px;
   color: #1a4246;
   opacity: 1;
 }
 
-.application__navigationPanel a:hover
+.app__navigationPanel a:hover
 {
   color: #0c2022;
 }
 
-.application__navigationPanel a:active
+.app__navigationPanel a:active
 {
   color: #34757a;
 }
@@ -155,14 +155,14 @@
   content: "\f139";
 }
 
-.application__contentArea
+.app__contentArea
 {
   flex: 1 1 auto;
   background-color: white;
   padding: 10px;
 }
 
-.application__navigationPanel, .application__contentArea
+.app__navigationPanel, .app__contentArea
 {
   height: 100%;
 }

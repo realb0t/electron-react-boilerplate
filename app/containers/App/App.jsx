@@ -59,8 +59,8 @@ export default class App extends Component {
     ].join(' ');
 
     return (
-      <div className={styles.application}>
-        <div className={styles.application__navigationPanel}>
+      <div className={styles.app}>
+        <div className={styles.app__navigationPanel}>
           <h1>Project Name</h1>
           <h2>Actions</h2>
           <ul>
@@ -129,7 +129,7 @@ export default class App extends Component {
             </li>
           </ul>
         </div>
-        <div className={styles.application__contentArea}>
+        <div className={styles.app__contentArea}>
           {this.props.children}
         </div>
       </div>
