@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import cn from 'classnames';
 import styles from './__navigationItem.css';
+import ItemShape from './shape';
 
 function NavigationItem({ type, title, id, selected, solved, solving })
 {
@@ -26,15 +27,7 @@ function NavigationItem({ type, title, id, selected, solved, solving })
   </li>);
 }
 
-NavigationItem.propTypes = {
-  type: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  selected: PropTypes.bool,
-  solved: PropTypes.bool.isRequired,
-  solving: PropTypes.bool.isRequired,
-  id: PropTypes.string.isRequired
-};
-
+NavigationItem.propTypes = ItemShape;
 NavigationItem.defaultProps = {
   selected: false
 };
