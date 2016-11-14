@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import styles from './Editor.css';
+import styles from './__editor.css';
 
 export function Editor({ id })
 {

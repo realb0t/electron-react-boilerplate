@@ -1,7 +1,7 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import styles from './App.css';
+import styles from './app.css';
 
 export default class App extends Component {
   static propTypes = {
