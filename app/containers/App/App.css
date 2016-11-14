@@ -17,7 +17,7 @@
 .application__navigationPanel h1,
 .application__navigationPanel h2
 {
-  margin: 20px 10px 0 10px;
+  margin: 20px 10px 0 15px;
 }
 
 .application__navigationPanel h1
@@ -35,7 +35,7 @@
 
 .application__navigationPanel ul
 {
-  padding: 0 15px 5px 15px;
+  padding: 0 20px 5px 20px;
   margin: 0px;
 }
 
