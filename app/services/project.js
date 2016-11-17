@@ -44,4 +44,11 @@ Project.open = (projectName, projectPath) =>
   return Promise.resolve(newProject);
 };
 
+export function openService(projectName, projectPath)
+{
+  Project.open(projectName, projectPath)
+    .then(project => ({ project }))
+    .catch(error => ({ error }));
+}
+
 export default Project;

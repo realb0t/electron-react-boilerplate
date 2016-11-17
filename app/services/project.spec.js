@@ -11,7 +11,7 @@ describe('services', () =>
       expect(project.fetch()).to.be.an.instanceof(Promise);
     });
 
-    it('open project', (done) =>
+    it('open project factory', (done) =>
     {
       Project.open('Name', '/Project/Path').then((project) =>
       {
