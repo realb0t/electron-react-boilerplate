@@ -38,4 +38,10 @@ class Project
   }
 }
 
+Project.open = (projectName, projectPath) =>
+{
+  const newProject = new Project(projectName, projectPath);
+  return Promise.resolve(newProject);
+};
+
 export default Project;

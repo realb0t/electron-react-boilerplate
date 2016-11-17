@@ -10,5 +10,14 @@ describe('services', () =>
       const project = new Project('Name', '/Project/Path');
       expect(project.fetch()).to.be.an.instanceof(Promise);
     });
+
+    it('open project', (done) =>
+    {
+      Project.open('Name', '/Project/Path').then((project) =>
+      {
+        expect(project).to.be.an.instanceof(Project);
+        return done();
+      }).catch(() => {});
+    });
   });
 });
