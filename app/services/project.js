@@ -1,4 +1,4 @@
-const projectContent = [
+export const projectContent = [
   {
     id: 'problemName',
     type: 'problem',
@@ -20,6 +20,14 @@ const projectContent = [
   }
 ];
 
+export function projectData(p)
+{
+  return {
+    id: p.name,
+    children: projectContent
+  };
+}
+
 class Project
 {
   constructor(projectName, projectPath)
@@ -30,11 +38,7 @@ class Project
 
   fetch()
   {
-    const projectData = {
-      id: this.name,
-      children: projectContent
-    };
-    return Promise.resolve(projectData);
+    return Promise.resolve(projectData(this));
   }
 }
 
@@ -48,6 +52,13 @@ export function openService(projectName, projectPath)
 {
   Project.open(projectName, projectPath)
     .then(project => ({ project }))
+    .catch(error => ({ error }));
+}
+
+export function fetchService(project)
+{
+  project.fetch()
+    .then(data => ({ data }))
     .catch(error => ({ error }));
 }
 
