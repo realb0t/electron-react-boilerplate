@@ -1,4 +1,8 @@
+import projectSaga from './project';
+
 export default function* ()
 {
-  return yield;
+  yield [
+    projectSaga()
+  ];
 }
