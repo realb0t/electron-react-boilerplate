@@ -7,7 +7,7 @@ export const projectContent = [
       {
         id: 'SolutionName',
         type: 'solution',
-        problems: [
+        children: [
           {
             id: 'problemName',
             type: 'problem',
@@ -24,6 +24,7 @@ export function projectData(p)
 {
   return {
     id: p.name,
+    type: 'project',
     children: projectContent
   };
 }

@@ -142,9 +142,11 @@
     "webpack-validator": "^2.2.9"
   },
   "dependencies": {
+    "baobab": "^2.3.4",
     "classnames": "^2.2.5",
     "electron-debug": "^1.0.1",
     "font-awesome": "^4.7.0",
+    "immutable": "^3.8.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
