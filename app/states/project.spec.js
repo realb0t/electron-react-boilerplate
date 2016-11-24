@@ -19,17 +19,5 @@ describe('states', () =>
         'solutionName', 'children', 'secondProblemName', 'type']))
         .to.equal('problem');
     });
-
-    it.skip('#importData should be import projectData as Records item', () =>
-    {
-      const projectData = exampleProjectData({ name: 'Project' });
-      const project = importData(projectData);
-      expect(project).to.be.an.instanceof(ProjectItem);
-      expect(project.getIn('children', 0)).to.be.an.instanceof(ProblemItem);
-      expect(project.getIn('children', 0, 'children', 0))
-        .to.be.an.instanceof(SolutionItem);
-      expect(project.getIn('children', 0, 'children', 0, 'children', 0))
-          .to.be.an.instanceof(ProblemItem);
-    });
   });
 });
