@@ -1,24 +1,21 @@
-export const projectContent = [
-  {
-    id: 'problemName',
+export const projectContent = {
+  problemName: {
     type: 'problem',
     solving: 'solvingName',
-    children: [
-      {
-        id: 'SolutionName',
+    children: {
+      solutionName: {
         type: 'solution',
-        children: [
-          {
-            id: 'problemName',
+        children: {
+          secondProblemName: {
             type: 'problem',
             solving: 'solvingName',
             children: []
           }
-        ]
+        }
       }
-    ]
+    }
   }
-];
+};
 
 export function projectData(p)
 {

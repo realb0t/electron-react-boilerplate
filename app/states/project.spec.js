@@ -9,15 +9,15 @@ describe('states', () =>
     it('#importData should be import projectData as Immutable', () =>
     {
       const projectData = exampleProjectData({ name: 'Project' });
-      // eslint-disable-next-line
-      // console.log(JSON.stringify(projectData));
       const project = importData(projectData);
       expect(project.getIn(['type'])).to.equal('project');
-      expect(project.getIn(['children', 0, 'type'])).to.equal('problem');
-      expect(project.getIn(['children', 0, 'children', 0, 'type']))
-        .to.equal('solution');
-      expect(project.getIn(['children', 0, 'children', 0,
-        'children', 0, 'type'])).to.equal('problem');
+      expect(project.getIn(['children', 'problemName', 'type']))
+        .to.equal('problem');
+      expect(project.getIn(['children', 'problemName', 'children',
+        'solutionName', 'type'])).to.equal('solution');
+      expect(project.getIn(['children', 'problemName', 'children',
+        'solutionName', 'children', 'secondProblemName', 'type']))
+        .to.equal('problem');
     });
 
     it.skip('#importData should be import projectData as Records item', () =>
