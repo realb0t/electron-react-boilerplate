@@ -1,9 +1,7 @@
-import { List as listBuilder } from 'immutable';
+import defaultState from '../states/cursor';
 
-const initialState = listBuilder();
-
-// Discover is current cursor
-export default function counter(state = initialState, action)
+// Current cursor
+export default function counter(state = defaultState, action)
 {
   switch (action.type)
   {

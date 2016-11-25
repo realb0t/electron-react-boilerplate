@@ -35,5 +35,6 @@ export const buildItem = (mapItem: Immutable.Map) =>
 };
 
 export const importData = projectData => Immutable.fromJS(projectData);
+const defaltState = importData({});
 
-export default importData({});
+export default defaltState;
