@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { buildItem, importData, ProjectItem,
+import Immutable from 'immutable';
+import defaultState, { buildItem, importData, ProjectItem,
   ProblemItem, SolutionItem } from './project';
 import { projectData as exampleProjectData } from '../services/project';
 
@@ -7,6 +8,11 @@ describe('states', () =>
 {
   describe('project', () =>
   {
+    it('default state is map', () =>
+    {
+      expect(defaultState).to.be.an.instanceof(Immutable.Map);
+    });
+
     it('#importData should be import projectData as Immutable', () =>
     {
       const projectData = exampleProjectData({ name: 'Project' });

@@ -35,3 +35,5 @@ export const buildItem = (mapItem: Immutable.Map) =>
 };
 
 export const importData = projectData => Immutable.fromJS(projectData);
+
+export default importData({});
