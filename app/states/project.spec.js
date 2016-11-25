@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { importData, ProjectItem, ProblemItem, SolutionItem } from './project';
+import { buildItem, importData, ProjectItem,
+  ProblemItem, SolutionItem } from './project';
 import { projectData as exampleProjectData } from '../services/project';
 
 describe('states', () =>
@@ -18,6 +19,31 @@ describe('states', () =>
       expect(project.getIn(['children', 'problemName', 'children',
         'solutionName', 'children', 'secondProblemName', 'type']))
         .to.equal('problem');
+    });
+
+    it('#buildItem for ProjectItem', () =>
+    {
+      const projectData = exampleProjectData({ name: 'Project' });
+      const project = importData(projectData);
+      expect(buildItem(project)).to.be.an.instanceof(ProjectItem);
+    });
+
+    it('#buildItem for ProblemItem', () =>
+    {
+      const projectData = exampleProjectData({ name: 'Project' });
+      const project = importData(projectData);
+      const cursor = ['children', 'problemName'];
+      expect(buildItem(project.getIn(cursor)))
+        .to.be.an.instanceof(ProblemItem);
+    });
+
+    it('#buildItem for ProblemItem', () =>
+    {
+      const projectData = exampleProjectData({ name: 'Project' });
+      const project = importData(projectData);
+      const cursor = ['children', 'problemName', 'children', 'solutionName'];
+      expect(buildItem(project.getIn(cursor)))
+        .to.be.an.instanceof(SolutionItem);
     });
   });
 });

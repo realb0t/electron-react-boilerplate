@@ -1,9 +1,9 @@
 // @flor
 import Immutable, { Record as record } from 'immutable';
 
-const ProjectRecord = record({ id: null, type: null, children: [] });
-const SolutionRecord = record({ id: null, type: null, children: [] });
-const ProblemRecord = record({ id: null, type: null, children: [] });
+const ProjectRecord = record({ id: null, type: null, children: {} });
+const SolutionRecord = record({ id: null, type: null, children: {} });
+const ProblemRecord = record({ id: null, type: null, children: {} });
 
 export class ProjectItem extends ProjectRecord
 {
