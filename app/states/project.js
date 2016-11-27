@@ -2,9 +2,18 @@
 import Immutable, { Record as record } from 'immutable';
 import { projectData as exampleProjectData } from './../services/project';
 
-const ProjectRecord = record({ title: null, type: null, children: {} });
-const SolutionRecord = record({ title: null, type: null, children: {} });
-const ProblemRecord = record({ title: null, type: null, children: {} });
+const ProjectRecord = record({ id: null,
+  title: null,
+  type: 'project',
+  children: {} });
+const SolutionRecord = record({ id: null,
+  title: null,
+  type: 'solution',
+  children: {} });
+const ProblemRecord = record({ id: null,
+  title: null,
+  type: 'problem',
+  children: {} });
 
 export class ProjectItem extends ProjectRecord
 {
