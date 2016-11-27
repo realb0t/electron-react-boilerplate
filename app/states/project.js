@@ -1,5 +1,6 @@
 // @flor
 import Immutable, { Record as record } from 'immutable';
+import { projectData as exampleProjectData } from './../services/project';
 
 const ProjectRecord = record({ title: null, type: null, children: {} });
 const SolutionRecord = record({ title: null, type: null, children: {} });
@@ -35,6 +36,6 @@ export const buildItem = (mapItem: Immutable.Map) =>
 };
 
 export const importData = projectData => Immutable.fromJS(projectData);
-const defaltState = importData({});
+const defaltState = importData(exampleProjectData({ name: 'Example project' }));
 
 export default defaltState;
