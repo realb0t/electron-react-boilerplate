@@ -1,0 +1,150 @@
+.app__navigationPanel
+{
+  flex: 0 0 220px;
+  background-color: #4da8b0;
+  font-size: 15px;
+  color: #1a4246;
+  overflow: scroll;
+  height: 100%;
+}
+
+.app__navigationPanel h1,
+.app__navigationPanel h2
+{
+  margin: 20px 10px 0 15px;
+}
+
+.app__navigationPanel h1
+{
+  font-size: 18px;
+  color: black;
+}
+
+.app__navigationPanel h2
+{
+  font-size: 15px;
+  color: #1a4246;
+  text-transform: uppercase;
+}
+
+.app__navigationPanel ul
+{
+  padding: 0 20px 5px 20px;
+  margin: 0px;
+}
+
+.app__navigationPanel li
+{
+  margin: 7px 0;
+  padding-left: 10px;
+  position: relative;
+}
+
+.navigationItem__label::before
+{
+  content: " ";
+}
+
+.navigationItem__label
+{
+  color: #34767c;
+  font-size: 13px;
+}
+
+/* Always second level */
+.app__navigationPanel li.navigationItem_type_solution
+{
+  margin: 0 0 5px 0;
+}
+
+.navigationItem_type_problem > ul
+{
+  padding: 5px;
+}
+
+/* Link */
+
+.app__navigationPanel a
+{
+  font-size: 15px;
+  color: #1a4246;
+  opacity: 1;
+}
+
+.app__navigationPanel a:hover
+{
+  color: #0c2022;
+}
+
+.app__navigationPanel a:active
+{
+  color: #34757a;
+}
+
+.navigationItem_type_solution.navigationItem_selected a
+{
+  font-weight: bold;
+}
+
+.navigationItem a::before
+{
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  left: -5px;
+  top: 4px;
+  position: absolute;
+  font-size: 13px;
+  color: #34757a;
+}
+
+.navigationItem a:hover::before
+{
+  color: #1a4246;
+}
+
+.navigationItem a:active::before
+{
+  color: #34757a;
+}
+
+.navigationItem_type_problem > a::before
+{
+  content: "\f29c";
+}
+
+.navigationItem_type_problem.navigationItem_solved > a::before
+{
+  content: "\f059";
+}
+
+.navigationItem_type_solution > a::before
+{
+  content: "\f05d";
+}
+
+.navigationItem_type_solution.navigationItem_solving > a::before
+{
+  content: "\f058";
+}
+
+.navigationItem_type_dashboard > a::before
+{
+  content: "\f015";
+}
+
+.navigationItem_type_unresolvedList > a::before
+{
+  content: "\f29c";
+}
+
+.navigationItem_type_noDecisionList > a::before
+{
+  content: "\f05d";
+}
+
+.navigationItem_type_onTop > a::before
+{
+  content: "\f139";
+}

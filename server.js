@@ -30,12 +30,15 @@ app.use(wdm);
 
 app.use(webpackHotMiddleware(compiler));
 
-const server = app.listen(PORT, 'localhost', serverError => {
-  if (serverError) {
+const server = app.listen(PORT, 'localhost', serverError =>
+{
+  if (serverError)
+  {
     return console.error(serverError);
   }
 
-  if (argv['start-hot']) {
+  if (argv['start-hot'])
+  {
     spawn('npm', ['run', 'start-hot'], { shell: true, env: process.env, stdio: 'inherit' })
       .on('close', code => process.exit(code))
       .on('error', spawnError => console.error(spawnError));
@@ -44,10 +47,12 @@ const server = app.listen(PORT, 'localhost', serverError => {
   console.log(`Listening at http://localhost:${PORT}`);
 });
 
-process.on('SIGTERM', () => {
+process.on('SIGTERM', () =>
+{
   console.log('Stopping dev server');
   wdm.close();
-  server.close(() => {
+  server.close(() =>
+  {
     process.exit(0);
   });
 });

@@ -1,0 +1,7 @@
+.app__contentArea
+{
+  flex: 1 1 auto;
+  background-color: white;
+  padding: 10px;
+  height: 100%;
+}
