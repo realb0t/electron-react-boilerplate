@@ -1,15 +1,29 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { Editor, EditorState } from 'draft-js';
 import styles from './__contentArea.css';
 
-function ContentArea({ children })
+class ContentArea extends Component
 {
-  return (<div className={styles.app__contentArea}>
-    {children}
-  </div>);
-}
+  static propTypes = {
+    children: PropTypes.node
+  };
 
-ContentArea.propTypes = {
-  children: PropTypes.node
-};
+  constructor(props)
+  {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
+    this.onChange = (editorState) => this.setState({ editorState });
+  }
+
+  render()
+  {
+    // const { children } = this.props;
+    const { editorState } = this.state;
+
+    return (<div className={styles.app__contentArea}>
+      <Editor editorState={editorState} onChange={this.onChange} />
+    </div>);
+  }
+}
 
 export default ContentArea;
