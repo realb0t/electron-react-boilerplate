@@ -1,27 +1,38 @@
 import React, { PropTypes, Component } from 'react';
-import { Editor, EditorState } from 'draft-js';
+import RichTextEditor from 'react-rte';
 import styles from './__contentArea.css';
 
 class ContentArea extends Component
 {
   static propTypes = {
-    children: PropTypes.node
+    onChange: PropTypes.func
   };
 
   constructor(props)
   {
     super(props);
-    this.state = { editorState: EditorState.createEmpty() };
-    this.onChange = (editorState) => this.setState({ editorState });
+    this.state = { value: RichTextEditor.createEmptyValue() };
+    this.onChange = this.change.bind(this);
+  }
+
+  change(value)
+  {
+    this.setState({ value });
+    if (this.props.onChange)
+    {
+      this.props.onChange(
+        value.toString('html')
+      );
+    }
   }
 
   render()
   {
-    // const { children } = this.props;
-    const { editorState } = this.state;
-
     return (<div className={styles.app__contentArea}>
-      <Editor editorState={editorState} onChange={this.onChange} />
+      <RichTextEditor
+        value={this.state.value}
+        onChange={this.onChange}
+      />
     </div>);
   }
 }
