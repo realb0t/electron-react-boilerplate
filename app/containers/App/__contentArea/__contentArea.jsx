@@ -1,40 +1,15 @@
-import React, { PropTypes, Component } from 'react';
-import RichTextEditor from 'react-rte';
+import React, { PropTypes } from 'react';
 import styles from './__contentArea.css';
 
-class ContentArea extends Component
+function ContentArea({ children })
 {
-  static propTypes = {
-    onChange: PropTypes.func
-  };
-
-  constructor(props)
-  {
-    super(props);
-    this.state = { value: RichTextEditor.createEmptyValue() };
-    this.onChange = this.change.bind(this);
-  }
-
-  change(value)
-  {
-    this.setState({ value });
-    if (this.props.onChange)
-    {
-      this.props.onChange(
-        value.toString('html')
-      );
-    }
-  }
-
-  render()
-  {
-    return (<div className={styles.app__contentArea}>
-      <RichTextEditor
-        value={this.state.value}
-        onChange={this.onChange}
-      />
-    </div>);
-  }
+  return (<div className={styles.app__contentArea}>
+    {children}
+  </div>);
 }
+
+ContentArea.propTypes = {
+  children: PropTypes.node
+};
 
 export default ContentArea;
