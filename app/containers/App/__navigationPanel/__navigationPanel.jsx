@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import styles from './__navigationPanel.css';
 
-function NavigationPanel()
+function NavigationPanel({ project: { title } })
 {
   const problemClasses = [
     styles.navigationItem,
@@ -53,7 +54,7 @@ function NavigationPanel()
   ].join(' ');
 
   return (<div className={styles.app__navigationPanel}>
-    <h1>Project Name</h1>
+    <h1>{title}</h1>
     <h2>Actions</h2>
     <ul>
       <li className={dashboardClasses}>
@@ -124,6 +125,17 @@ function NavigationPanel()
 }
 
 NavigationPanel.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired
+  }).isRequired
 };
 
-export default NavigationPanel;
+function mapStateToProps(state, ownProps)
+{
+  return {
+    ...ownProps,
+    project: state.project.toJS()
+  };
+}
+
+export default connect(mapStateToProps)(NavigationPanel);
